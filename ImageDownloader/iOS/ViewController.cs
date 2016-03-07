@@ -6,6 +6,8 @@ using System.IO;
 using System.Text;
 using Foundation;
 using System.Linq.Expressions;
+using System.Net.Http;
+using System.Threading.Tasks;
 
 namespace ImageDownloader.iOS
 {
@@ -24,13 +26,12 @@ namespace ImageDownloader.iOS
 			Xamarin.Calabash.Start ();
 			#endif
 
-			// Perform any additional setup after loading the view, typically from a nib.
-			Button.TouchUpInside += delegate {
-				// "" -> HasText: false
-				// "a" -> HasText: true
+			Button.TouchUpInside += async (sender, e) => {
 				if (imageURL.HasText) {
 					try {
-						ImageView.Image = DownloadImage (NSUrl.FromString (imageURL.Text));
+						byte[] B_imageData = await Download(imageURL.Text);
+						NSData imageData = NSData.FromArray(B_imageData);
+						ImageView.Image = UIImage.LoadFromData(imageData);
 					} catch {
 						ShowAlert ("エラー", "URLが正しくありません", new String[]{ "OK" });
 					}
@@ -46,11 +47,10 @@ namespace ImageDownloader.iOS
 			// Release any cached data, images, etc that aren't in use.		
 		}
 
-		public UIImage DownloadImage (NSUrl Url)
+		async Task<byte[]> Download (string Url)
 		{
-			var webClient = new WebClient ();
-			var ImageData = webClient.DownloadData (Url);
-			return UIImage.LoadFromData (NSData.FromArray (ImageData));
+			var httpClient = new HttpClient ();
+			return await httpClient.GetByteArrayAsync (Url);
 		}
 
 		public void ShowAlert (String title, String subtitle, String[] button)
