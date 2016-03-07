@@ -1,4 +1,4 @@
-###ImageDownloader
+###ImageDownloader - 非同期でURLから画像をダウンロード
 「HttpClient」と「async / await」構文を用いてネットから非同期でデータをダウンロードする<br>
 asyncで定義した関数をawaitで呼び出すことで非同期処理になる<br>
 非同期でさせたい関数をasyncで定義しておく<br>
@@ -15,13 +15,13 @@ Buttonなどのイベントで呼び出す際、以下の構文ではawaitを呼
 ```c#
 // iOS
 Button.TouchUpInside += delegate {
-  await Download(); // Error...
+  await Download("http://..."); // Error...
   ...
 }
 
 // Android
 Button.Click += delegate {
-  await Download(); // Error..
+  await Download("http://..."); // Error..
   ...
 }
 ```
@@ -29,13 +29,13 @@ awaitを呼び出すにはdelegate {} を async(sender, e) => {}に書き換え�
 ```c#
 // iOS
 Button.TouchUpInside += async(sender, e) => {
-  await Download(); // OK!
+  await Download("http://..."); // OK!
   ...
 }
 
 // Android
 Button.Click += async(sender, e) => {
-  await Download(); // OK!
+  await Download("http://..."); // OK!
   ...
 }
 ```
