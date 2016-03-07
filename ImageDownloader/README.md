@@ -15,13 +15,13 @@ Buttonなどのイベントで呼び出す際、以下の構文ではawaitを呼
 ```c#
 // iOS
 Button.TouchUpInside += delegate {
-  await func(); // Error...
+  await Download(); // Error...
   ...
 }
 
 // Android
 Button.Click += delegate {
-  await func(); // Error..
+  await Download(); // Error..
   ...
 }
 ```
@@ -29,13 +29,13 @@ awaitを呼び出すにはdelegate {} を async(sender, e) => {}に書き換え�
 ```c#
 // iOS
 Button.TouchUpInside += async(sender, e) => {
-  await func(); // OK!
+  await Download(); // OK!
   ...
 }
 
 // Android
 Button.Click += async(sender, e) => {
-  await func(); // OK!
+  await Download(); // OK!
   ...
 }
 ```
