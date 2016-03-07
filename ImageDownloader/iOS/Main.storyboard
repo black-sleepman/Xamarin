@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ImageURL:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jjf-J8-AJ3">
+                                <rect key="frame" x="0.0" y="20" width="134" height="67"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="134" id="56I-fY-4sI"/>
+                                    <constraint firstAttribute="height" constant="67" id="Yql-RT-OuJ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="NNF-4x-fX3">
+                                <rect key="frame" x="142" y="39" width="438" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="0xw-jW-q3v"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="zjn-Q7-w5w">
+                                <rect key="frame" x="20" y="90" width="560" height="436"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oBE-Ac-vcx">
+                                <rect key="frame" x="225" y="550" width="151" height="30"/>
+                                <state key="normal" title="Hello World, Click Me!">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="jjf-J8-AJ3" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="23g-N9-WX5"/>
+                            <constraint firstItem="NNF-4x-fX3" firstAttribute="centerY" secondItem="jjf-J8-AJ3" secondAttribute="centerY" id="CHc-Rz-nKh"/>
+                            <constraint firstItem="jjf-J8-AJ3" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="ChY-KZ-28h"/>
+                            <constraint firstItem="zjn-Q7-w5w" firstAttribute="top" secondItem="jjf-J8-AJ3" secondAttribute="bottom" constant="3" id="HBY-MR-S3c"/>
+                            <constraint firstItem="oBE-Ac-vcx" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="HiD-uS-i16"/>
+                            <constraint firstItem="zjn-Q7-w5w" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="KTD-4Z-wFz"/>
+                            <constraint firstItem="oBE-Ac-vcx" firstAttribute="top" secondItem="zjn-Q7-w5w" secondAttribute="bottom" constant="24" id="McK-Da-bga"/>
+                            <constraint firstItem="NNF-4x-fX3" firstAttribute="leading" secondItem="jjf-J8-AJ3" secondAttribute="trailing" constant="8" id="SBu-Ge-hMd"/>
+                            <constraint firstItem="zjn-Q7-w5w" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="8" id="ZdW-uU-Hoo"/>
+                            <constraint firstItem="NNF-4x-fX3" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="aHJ-dB-1eS"/>
+                            <constraint firstItem="zjn-Q7-w5w" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="m11-7J-KMj"/>
+                            <constraint firstItem="zjn-Q7-w5w" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="rNG-NU-zjP"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="Button" destination="oBE-Ac-vcx" id="OkX-0Z-gth"/>
+                        <outlet property="ImageView" destination="zjn-Q7-w5w" id="m0f-KJ-phv"/>
+                        <outlet property="imageURL" destination="NNF-4x-fX3" id="VkZ-sY-NJY"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="640" y="333"/>
+        </scene>
+    </scenes>
+</document>
